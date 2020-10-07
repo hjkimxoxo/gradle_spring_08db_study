@@ -26,12 +26,12 @@ public class MainForMemberDao {
 			memberDao = ctx.getBean(MemberDao.class);
 			
 			
-			//memberDao.insert(new Member("test6@test.co.kr", "1234", "test5", LocalDateTime.now()));
+			memberDao.insert(new Member("test6@test.co.kr", "1234", "test5", LocalDateTime.now()));
 			
 			selectByEmail();
 			selectAll();
-			//insertMember();
-			//selectAll();
+			insertMember();
+			selectAll();
 			deleteMember();
 			selectAll();
 			
@@ -58,7 +58,7 @@ public class MainForMemberDao {
 	private static void insertMember() {
 		System.out.println("insertMember()");
 		Member member = new Member("test7@test.co.kr", "1234", "test7", LocalDateTime.now());
-//		String prefix = formatter.format(LocalDateTime.now());
+		String prefix = formatter.format(LocalDateTime.now());
 //		Member member = new Member(prefix + "@test.co.kr", prefix, prefix, LocalDateTime.now());
 		memberDao.insert(member);
 		System.out.println(member.getId() + "데이터추가");
